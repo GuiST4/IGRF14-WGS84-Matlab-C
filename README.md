@@ -15,7 +15,7 @@ This core module is designed as a reference verification tool for CubeSat Attitu
 
 ```matlab
 % Load coefficients
-load "igrf13coeffs.mat"
+load('../data/igrf14coeffs.mat', 'C_nm');
 
 % Define position (e.g., ISTNanoSat Orbit)
 height = 400000;    % 400 km
@@ -28,3 +28,18 @@ N      = 13;        % Expansion order
 [B_ned, F] = magnetic_field(height, lat, lon, year, C_nm, N);
 
 disp(['Total Intensity: ', num2str(F), ' nT']);
+
+```
+## Verification Results
+
+### 1. Vector Comparison (Custom vs MATLAB Aerospace Toolbox)
+The following plot compares the North, East, and Down magnetic vector components over 2 orbits.
+<p align="center">
+  <img src="plots/simulink_vector_comparison.png" width="80%">
+</p>
+
+### 2. RMSE Convergence
+A Monte Carlo analysis showing the Root Mean Square Error (RMSE) of the custom model converging to the MATLAB reference as the spherical harmonic degree (N) increases.
+<p align="center">
+  <img src="plots/rmse_convergence.png" width="80%">
+</p>
