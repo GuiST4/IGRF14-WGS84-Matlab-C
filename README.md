@@ -6,7 +6,7 @@ This core module is designed as a reference verification tool for CubeSat Attitu
 
 ## Features
 
-- **High Fidelity:** Implements IGRF-13 generation up to degree/order 13.
+- **High Fidelity:** Implements IGRF-14 generation up to degree/order 13.
 - **Geodetic Accuracy:** Includes a rigorous WGS84 Geodetic-to-Geocentric coordinate transformation (accounting for Earth's oblateness), ensuring high accuracy at variable altitudes.
 - **Schmidt Quasi-Normalization:** Correctly handles spherical harmonic normalization/un-normalization.
 - **Secular Variation:** Linear time interpolation for precise field estimation between epoch years.
