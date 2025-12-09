@@ -28,11 +28,12 @@ function [B, F] = magnetic_field(height_m, latitude_deg, longitude_deg, year, C_
     [Pnm, dPnm] = compute_Pnm_dPnm(theta, Knm, N);
 
     % Gauss Coefficients and Secular Variations
-    g_nm_norm = C_nm(1:13,1:13);
-    h_nm_norm = C_nm(1:13,14:26);
-    g_nm_dot = C_nm(1:13,27:39);
-    h_nm_dot = C_nm(1:13,40:52);
-    year_table = C_nm(1,53);
+    sz = size(C_nm, 1); 
+    g_nm_norm = C_nm(1:sz, 1:sz);
+    h_nm_norm = C_nm(1:sz, sz+1:2*sz);       
+    g_nm_dot  = C_nm(1:sz, 2*sz+1:3*sz);     
+    h_nm_dot  = C_nm(1:sz, 3*sz+1:4*sz);   
+    year_table = C_nm(1, end);
 
     % Time Coefficients
     [g_nm_norm_t, h_nm_norm_t] = time_coeff(g_nm_norm, h_nm_norm, g_nm_dot, h_nm_dot, year_table, year);

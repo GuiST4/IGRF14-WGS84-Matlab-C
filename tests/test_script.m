@@ -4,10 +4,13 @@ clearvars
 clc
 format long
 
-% Load the IGRF.cof coefficients of 2025 and secular variations
+% Loading paths
 addpath('../data/')
 addpath('../src/')
-load Gauss_coefficients_2020.mat
+addpath('../tools/')
+
+% Load Coefficients
+load('../data/igrf14coeffs.mat', 'C_nm');
 
 % Magnetic field computation example
 
@@ -15,10 +18,10 @@ load Gauss_coefficients_2020.mat
 latitude_deg = 40;
 longitude_deg = 60;
 height_m = 500000;
-year = 2020;
+year = 2025;
 
 % Maximum degree of Spherical Harmonic aproximation
-N = 12;
+N = 13;
 
 % Computation
 [~, F] = magnetic_field(height_m, latitude_deg, longitude_deg, year, C_nm, N);
