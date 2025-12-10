@@ -43,3 +43,11 @@ A Monte Carlo analysis showing the Root Mean Square Error (RMSE) of the custom m
 <p align="center">
   <img src="plots/rmse_convergence.png" width="80%">
 </p>
+
+## Disclaimer
+This model is validated against the Aerospace Toolbox. However, if a sign error in this code causes the satellite to spin up like a Beyblade instead of stabilizing:
+1. I am not liable.
+2. You win a high-speed centrifuge record.
+
+## License
+MIT License
