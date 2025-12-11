@@ -21,7 +21,7 @@ The MATLAB implementation is located in [src/](src/) and can be run as follows:
 % Load coefficients
 load('../data/igrf14coeffs.mat', 'C_nm');
 
-% Define position (e.g., ISTNanoSat Orbit)
+% Define position 
 height = 400000;    % 400 km
 lat    = 38.7223;   % Lisbon Latitude
 lon    = -9.1393;   % Lisbon Longitude
